@@ -2,6 +2,8 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Race Analytics Group</label>
+    <permissionSets>Contestant_Read</permissionSets>
+    <permissionSets>Driver_Read</permissionSets>
     <permissionSets>Race_Analytics</permissionSets>
     <permissionSets>Race_Data_Read</permissionSets>
     <status>Updated</status>

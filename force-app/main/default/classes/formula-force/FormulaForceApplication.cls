@@ -17,12 +17,14 @@ public with sharing class FormulaForceApplication {
 
     public static final fflib_Application.ServiceFactory service =
             new fflib_Application.ServiceFactory(new Map<Type, Type>{
-                    //IRaceService.class => RacesService.class
+                    RaceService.class => RaceServiceImpl.class
             });
 
     public static final fflib_Application.SelectorFactory selector =
             new fflib_Application.SelectorFactory(
-                    new Map<SObjectType, Type>{}
+                    new Map<SObjectType, Type>{
+                            Contestant__c.SObjectType => ContestantSelector.class
+                    }
             );
 
             public static void throwAuraHandledException(Exception e){
