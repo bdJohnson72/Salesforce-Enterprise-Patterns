@@ -18,8 +18,8 @@ public with sharing class RaceServiceImpl implements IRaceService {
         for (Race__c race : raceSelector.selectByIdWithContestants(raceIds)){
             contestantList.addAll(race.Contestants__r);
         }
-        //delegate to contestant service
-        ContestantService.awardChampionshipPoints(uow, contestantList);
+        //delegate to contestant domain class
+        new Contestants(contestantList).awardChampionshipPoints(uow);
         uow.commitWork();
     }
 }

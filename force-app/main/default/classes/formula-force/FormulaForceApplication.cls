@@ -15,6 +15,17 @@ public with sharing class FormulaForceApplication {
 
             );
 
+    public static final fflib_Application.DomainFactory domain =
+            new fflib_Application.DomainFactory(FormulaForceApplication.selector,
+                    new Map<SObjectType, Type> {
+                            Team__c.SObjectType => Teams.Constructor.class,
+                            RaceData__c.SObjectType => Races.Constructor.class,
+                            Car__c.SObjectType => Cars.Constructor.class,
+                            Driver__c.SObjectType => Drivers.Constructor.class,
+                            Contestant__c.SObjectType => Contestants.Constructor.class
+                    }
+            );
+
     public static final fflib_Application.ServiceFactory service =
             new fflib_Application.ServiceFactory(new Map<Type, Type>{
                     RaceService.class => RaceServiceImpl.class

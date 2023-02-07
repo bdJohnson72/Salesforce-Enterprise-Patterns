@@ -6,5 +6,6 @@
     <permissionSets>Driver_Read</permissionSets>
     <permissionSets>Race_Analytics</permissionSets>
     <permissionSets>Race_Data_Read</permissionSets>
+    <permissionSets>Team_Read</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>

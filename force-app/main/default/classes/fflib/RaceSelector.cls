@@ -7,12 +7,17 @@ public with sharing class RaceSelector extends fflib_SObjectSelector {
     public List<Schema.SObjectField> getSObjectFieldList() {
         return new List<Schema.SObjectField>{
                 RaceData__c.Id,
-                Race__c.Name
+                Race__c.Name,
+                Race__c.Status__c
         };
     }
 
     public Schema.SObjectType getSObjectType() {
         return Race__c.SObjectType;
+    }
+
+    public List<Race__c> selectById(Set<Id> raceIds) {
+        return (List<Race__c>) selectSObjectsById(raceIds);
     }
 
     public List<Race__c> selectByIdWithContestants(set<Id> raceIds){

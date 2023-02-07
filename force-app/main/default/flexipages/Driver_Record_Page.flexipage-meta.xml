@@ -120,6 +120,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>ComplianceChecker</componentName>
+                <identifier>c_ComplianceChecker</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>

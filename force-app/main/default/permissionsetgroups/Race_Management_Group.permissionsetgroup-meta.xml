@@ -2,9 +2,11 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Race Management Group</label>
+    <permissionSets>Cars_Edit</permissionSets>
     <permissionSets>Contestant_Edit</permissionSets>
     <permissionSets>Driver_Edit</permissionSets>
     <permissionSets>RaceDataEdit</permissionSets>
     <permissionSets>Race_Management</permissionSets>
+    <permissionSets>Team_Edit</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>
