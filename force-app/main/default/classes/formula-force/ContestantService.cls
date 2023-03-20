@@ -6,6 +6,8 @@ public with sharing class ContestantService {
     public class ContestantServiceException extends Exception{}
     public static void awardChampionshipPoints(Set<Id> contestantIds){
        fflib_ISObjectUnitOfWork uow = FormulaForceApplication.unitOfWork.newInstance();
+        ContestantSelector contestantSelector = (ContestantSelector) FormulaForceApplication.selector.newInstance(Contestant__c.SObjectType);
+        contestantSelector.setDataAccess(fflib_SObjectSelector.DataAccess.SYSTEM_MODE);
         Contestants contestants = new Contestants(new ContestantSelector().selectById(contestantIds));
         contestants.awardChampionshipPoints(uow);
         uow.commitWork();

@@ -2,7 +2,7 @@
  * Created by Brooks Johnson - Insulet on 1/27/23.
  */
 
-public with sharing class RaceSelector extends fflib_SObjectSelector {
+public with sharing class RaceSelector extends FormulaForceSelector {
 
     public List<Schema.SObjectField> getSObjectFieldList() {
         return new List<Schema.SObjectField>{
@@ -24,6 +24,8 @@ public with sharing class RaceSelector extends fflib_SObjectSelector {
         fflib_QueryFactory raceQueryFactory = newQueryFactory();
        fflib_QueryFactory contestQueryFactory = new ContestantSelector()
                .addQueryFactorySubselect(raceQueryFactory);
-        return (List<Race__c>) Database.query(raceQueryFactory.setCondition('Id in : raceIds').toSOQL());
+        return (List<Race__c>) Database.query(raceQueryFactory
+                .setCondition('Id in : raceIds')
+                .toSOQL());
     }
 }
