@@ -764,7 +764,7 @@ public class fflib_QueryFactory { //No explicit sharing declaration - inherit fr
 		if(allRows) {
 			result += ' ALL ROWS';
 		}
-
+		System.debug('The query string = ' + result);
 		return result;
 	}
 
