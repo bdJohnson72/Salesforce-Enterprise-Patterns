@@ -1,0 +1,26 @@
+<!--
+ - Created by bjohnson on 5/1/23.
+ -->
+
+<!-- Contact Creation Form -->
+<template>
+    <template lwc:if={contact}>
+    <lightning-card class='slds-p-around_medium'>
+        <lightning-input type="text" value= {contact.FirstName}
+                         name = "FirstName"
+                         label = 'First Name'
+                         onchange={handleChange}>
+        </lightning-input>
+        <lightning-input type="text" value= {contact.LastName}
+                         name = "LastName"
+                         label = 'Last Name'
+                         onchange={handleChange}>
+        </lightning-input>
+        <lightning-button type="submit"
+                          title='submit me'
+                          label='submit'
+                          onclick={handleSubmit}>
+        </lightning-button>
+    </lightning-card>
+    </template>
+</template>
